@@ -7,5 +7,29 @@
 
 ## Chunking strategies
 
-- RecursiveCharacterTextSplitter, split text into chunks with overlap. Too much or less gives less precision or noise. Keep it optimal based on content
-- Semantic Chunking, requires API but can chunk based on topics. Best for mixed topics documents
+### RecursiveCharacterTextSplitter
+
+Split text into chunks with overlap. Too much or less gives less precision or noise. Keep it optimal based on content.
+
+Tip use a chunk size comparison first, check the sizes and pick the optimal size. E.g
+E.g 
+
+```python
+for size in sizes:
+  splitter = RecursiveCharacterTextSplitter(
+    chunk_size=size, chunk_overlap=size // 5 # 20% overlap
+  )
+  chunks = splitter.split_text(SAMPLE_TEXT)
+  print(f" Size {size}:" {len(chunks)} chunks)
+```
+
+```console
+Size 200: 6 chunks
+Size 500: 3 chunks (optimal)
+Size 1000: 1 chunks
+``` 
+
+### Semantic Chunking
+
+requires API but can chunk based on topics. Best for mixed topics documents
+
