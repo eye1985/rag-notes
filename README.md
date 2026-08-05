@@ -4,7 +4,7 @@ Uses LangChain packages.
 
 ## Text loading and splitters
 
-Text, Lazy, Web, PDF, check langchain community (deprecated) see alternative
+Text, Document, Lazy, Web, PDF, check langchain community (deprecated) see alternative
 
 ## Chunking strategies
 
