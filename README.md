@@ -5,23 +5,6 @@
 
 Text, Lazy, Web, PDF, check langchain community (deprecated) see alternative
 
-### Markdown
-Check out MarkdownHeaderTextSplitter when using MD's.
-
-```python
-
-headers_to_consider = [
-  ("#", "h1"),
-  ("##", "h2"),
-  ("###", "h3")
-]
-
-splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_consider)
-chunks = splitter.split_text(SAMPLE_TEXT)
-..
-..
-```
-
 ## Chunking strategies
 
 ### RecursiveCharacterTextSplitter
@@ -50,6 +33,23 @@ Size 1000: 1 chunks
 
 Reason for overlap is for context to be kept. Its a little redundancy, but helps AI with context. 
 Always have overlap. 
+
+### Markdown
+Check out MarkdownHeaderTextSplitter when using MD's. This helps give better context to the chunks.
+
+```python
+
+headers_to_consider = [
+  ("#", "h1"),
+  ("##", "h2"),
+  ("###", "h3")
+]
+
+splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_consider)
+chunks = splitter.split_text(SAMPLE_TEXT)
+..
+..
+```
 
 
 ### Semantic Chunking
