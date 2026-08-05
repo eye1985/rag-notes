@@ -1,5 +1,6 @@
 # RAG notes
 
+Uses LangChain packages.
 
 ## Text loading and splitters
 
@@ -29,12 +30,12 @@ Size 500: 3 chunks (optimal)
 Size 1000: 1 chunks
 ```
 
-### Overlap
+#### Overlap
 
 Reason for overlap is for context to be kept. Its a little redundancy, but helps AI with context. 
 Always have overlap. 
 
-### Markdown
+#### Markdown
 Check out MarkdownHeaderTextSplitter when using MD's. This helps give better context to the chunks.
 
 ```python
@@ -50,6 +51,18 @@ chunks = splitter.split_text(SAMPLE_TEXT)
 ..
 ..
 ```
+
+#### Code splitter
+
+Use from_language for code splitter for better results.
+
+```python
+splitter = RescursiveCharacterTextSplitter.from_language(language=Language.PYTHON, chunk_size=500, chunk_overlap=50)
+splitter.split_text(PYTHON_CODE)
+...
+...
+``` 
+
 
 
 ### Semantic Chunking
