@@ -48,8 +48,6 @@ headers_to_consider = [
 
 splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_consider)
 chunks = splitter.split_text(SAMPLE_TEXT)
-..
-..
 ```
 
 #### Code splitter
@@ -59,10 +57,7 @@ Use from_language for code splitter for better results.
 ```python
 splitter = RescursiveCharacterTextSplitter.from_language(language=Language.PYTHON, chunk_size=500, chunk_overlap=50)
 splitter.split_text(PYTHON_CODE)
-...
-...
 ``` 
-
 
 
 ### Semantic Chunking
