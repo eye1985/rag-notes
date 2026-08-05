@@ -2,6 +2,35 @@
 
 Uses LangChain packages.
 
+
+## Chain Patterns
+
+LCEL (current standard)
+
+```python
+prompt | model | parser
+```
+
+### Sequential
+
+Step 1 -> Step 2 -> Step 3 etc..
+
+### Parallel 
+
+input -> summarize_chain, keywords_chain -> result
+
+
+### Passthrough (Keep original)
+
+question -> (pass through) context (from retriever) -> prompt | model
+
+### Debugging
+
+Verbose logging, quick and simple (basic)
+Callbacks, attach handlers to intercept and log each step (flexible)
+LangSmith, Visual trace viewer, cost tracking, eval tools etc.. (Recommended)
+
+
 ## Text loading and splitters
 
 Text, Document, Lazy, Web, PDF, check langchain community (deprecated) see alternative
