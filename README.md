@@ -1,4 +1,4 @@
-# rag-notes
+# RAG notes
 
 
 ## Text loading
@@ -27,7 +27,13 @@ for size in sizes:
 Size 200: 6 chunks
 Size 500: 3 chunks (optimal)
 Size 1000: 1 chunks
-``` 
+```
+
+### Overlap
+
+Reason for overlap is for context to be kept. Its a little redundancy, but helps AI with context. 
+Always have overlap. 
+
 
 ### Semantic Chunking
 
