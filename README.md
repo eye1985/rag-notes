@@ -1,9 +1,26 @@
 # RAG notes
 
 
-## Text loading
+## Text loading and splitters
 
-- Text, Lazy, Web, PDF, check langchain community (deprecated) see alternative
+Text, Lazy, Web, PDF, check langchain community (deprecated) see alternative
+
+### Markdown
+Check out MarkdownHeaderTextSplitter when using MD's.
+
+```python
+
+headers_to_consider = [
+  ("#", "h1"),
+  ("##", "h2"),
+  ("###", "h3")
+]
+
+splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_consider)
+chunks = splitter.split_text(SAMPLE_TEXT)
+..
+..
+```
 
 ## Chunking strategies
 
