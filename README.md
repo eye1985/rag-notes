@@ -132,3 +132,44 @@ load_dotenv()
 embeddings = OllamaEmbeddings(model="llama2-7b-embedding-q4_0") # Find more online
 ```
 
+## Similarity
+
+```python
+from langchain_openai.embeddings import OpenAIEmbeddings
+from dotenv import load_dotenv
+import numpy as np
+from ollama import embeddings
+
+def similarity_search():
+
+    # Documents
+    docs = [
+        "Python is a programming language",
+        "JavaScript is used for web development",
+        "Machine learning enables AI applications",
+        "Deep learning uses neural networks",
+        "Cats are popular pets",
+    ]
+
+    query = "What programming languages exist?"
+
+    # embed documents and query
+    doc_vector = embeddings_model.embed_documents(docs)
+    query_vector = embeddings_model.embed_query(query)
+
+    # compute cosine similarities
+    def cosine_similarity(vec1, vec2):
+        return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+
+    similarities = [cosine_similarity(query_vector, doc_vec) for doc_vec in doc_vector]
+
+    # rank documents by similarity
+    ranked_docs = sorted(zip(docs, similarities), key=lambda x: x[1], reverse=True)
+
+    print(f"Query: {query}\n")
+    print("Ranked by similarity:")
+    for doc, score in ranked_docs:
+        print(f"  {score:.4f}: {doc}")
+
+``` 
+
