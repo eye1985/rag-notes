@@ -109,5 +109,26 @@ load_dotenv()
 
 embeddings = OpenAIEmbeddings(model="text-emedding-3-small")
 embedding = embeddings.embed_query(SAMPLE_TEXT) # Check out embed_document for full documents
+
+len(embedding) #Check dimensions
+```
+
+### Free models
+
+```python
+from langchain_community.embeddings import HuggingFaceBgeEmeddings # Deprecated, find something else
+from dotenv import load_dotenv
+
+load_dotenv()
+embeddings = HuggingFaceBgeEmeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") # 384 dimensions
+```
+
+#### Olama
+```python
+from langchain_ollama import OllamaEmbeddings
+from dotenv import load_dotenv
+
+load_dotenv()
+embeddings = OllamaEmbeddings(model="llama2-7b-embedding-q4_0") # Find more online
 ```
 
