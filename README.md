@@ -132,7 +132,7 @@ load_dotenv()
 embeddings = OllamaEmbeddings(model="llama2-7b-embedding-q4_0") # Find more online
 ```
 
-## Similarity
+#### Similarity
 
 ```python
 from langchain_openai.embeddings import OpenAIEmbeddings
@@ -170,6 +170,32 @@ def similarity_search():
     print("Ranked by similarity:")
     for doc, score in ranked_docs:
         print(f"  {score:.4f}: {doc}")
+```
 
-``` 
+#### Caching
+
+```python
+
+# classic might be deprecated, check for newer solution
+from langchain_classic.embeddings.cache import CacheBackedEmbeddings
+from langchain_classic.storage from LocalFileStore
+import tempfile
+
+with tempfile.TemporaryDirectory() as tempdir:
+  store = LocalFileStore(directory=tempdir)
+
+  cached_embeddings = CacheBackedEmbeddings.from_bytes_store(
+    underlying_embeddings=embeddings, # embeddings is your embeddings
+    document_embedding_cache=store,
+    namespace="store"
+  )
+
+  text = "random text"
+
+  #hits API
+  vectors1 = cached_embeddings.embed_documents([text])
+
+  #hits cache
+  vectors2 = cached_embeddings.embed_documents([text])
+```
 
