@@ -93,3 +93,21 @@ splitter.split_text(PYTHON_CODE)
 
 requires API but can chunk based on topics. Best for mixed topics documents
 
+
+## Embeddings
+
+### Open AI
+
+text-embedding-3-small - General use
+text-embedding-3-large - high accuracy
+
+```python
+from langchain_openai.embeddings import OpenAIEmbeddings
+from dotenv import load_dotenv
+
+load_dotenv()
+
+embeddings = OpenAIEmbeddings(model="text-emedding-3-small")
+embedding = embeddings.embed_query(SAMPLE_TEXT) # Check out embed_document for full documents
+```
+
