@@ -201,8 +201,12 @@ with tempfile.TemporaryDirectory() as tempdir:
 
 #### Search types
 
-1. Normal Similarity SearchThe Goal: Find the mathematically closest, most relevant matches to the query.The Risk: Redundancy. If your top three matches all say the exact same thing, it will return all three, wasting your LLM's context window.Best For: Strict factual lookups, narrow questions, and high-speed data retrieval (e.g., "What is the employee ID for Jane Doe?").
+##### Normal Similarity SearchThe Goal: 
+
+Find the mathematically closest, most relevant matches to the query.The Risk: Redundancy. If your top three matches all say the exact same thing, it will return all three, wasting your LLM's context window.Best For: Strict factual lookups, narrow questions, and high-speed data retrieval (e.g., "What is the employee ID for Jane Doe?").
   
-2. MMR (Maximal Marginal Relevance) SearchThe Goal: Find highly relevant matches but intentionally force them to be diverse and different from one another.The Risk: Slower speed. It requires a two-step process that uses extra CPU power to calculate diversity.Best For: Broad research, open-ended questions, and text summarization (e.g., "Give me an overview of the company's financial risks").
+##### MMR (Maximal Marginal Relevance) SearchThe Goal: 
+
+Find highly relevant matches but intentionally force them to be diverse and different from one another.The Risk: Slower speed. It requires a two-step process that uses extra CPU power to calculate diversity.Best For: Broad research, open-ended questions, and text summarization (e.g., "Give me an overview of the company's financial risks").
 
 Normally you can use the AI to determine if the question is of MMR or Similarity
