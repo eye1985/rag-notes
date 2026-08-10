@@ -789,7 +789,7 @@ if __name__ == "__main__":
 
 ### Save in SQLITE example
 
-python```
+```python
 """
 Checkpointing and Persistence in LangGraph
 Save and resume agent state
