@@ -138,3 +138,7 @@ def demo_conditional_edges():
         print(f"Response: {result['response']}")
         print("-" * 40)
 ```
+
+### Loop back
+
+Just use the edge to call back to a previous edge to loop back.
