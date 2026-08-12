@@ -210,3 +210,21 @@ Find the mathematically closest, most relevant matches to the query.The Risk: Re
 Find highly relevant matches but intentionally force them to be diverse and different from one another.The Risk: Slower speed. It requires a two-step process that uses extra CPU power to calculate diversity.Best For: Broad research, open-ended questions, and text summarization (e.g., "Give me an overview of the company's financial risks").
 
 Normally you can use the AI to determine if the question is of MMR or Similarity
+
+## Multi-Agent Patterns
+
+### Supervisor 
+One agent coordinates others - Complex workflows
+
+### Hierarchical 
+Multiple levels of supervisors - Large organizations
+
+### Collaborative 
+Agents communicate peer-to-peer - Creative tasks
+
+### Sequential 
+Agents process in order - Pipelines
+
+### Parallel
+Agents work simultaneously - Speed optimization
+
