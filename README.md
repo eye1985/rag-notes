@@ -228,3 +228,7 @@ Agents process in order - Pipelines
 ### Parallel
 Agents work simultaneously - Speed optimization
 
+## Tools
+
+Always return errors rather than raising them. This allows the LLM to produce a natural language feedback.
+
