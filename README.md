@@ -232,3 +232,21 @@ Agents work simultaneously - Speed optimization
 
 Always return errors rather than raising them. This allows the LLM to produce a natural language feedback.
 
+## Security
+
+### Layer 1: Sanitizer
+Regex: block known attack patterns
+
+### Layer 2: PII (personally identifiable information) Detector
+Regex: mask personal data before LLM sees it
+
+### Layer 3: LLM Guard
+LLM: catch attacks regex cannot see
+
+### Layer 4: Your LLM
+The actual work
+
+### Layer 5: Output validator
+Catch PII leaks and harmful content on the way OUT
+
+
