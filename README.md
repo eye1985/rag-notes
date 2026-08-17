@@ -249,4 +249,18 @@ The actual work
 ### Layer 5: Output validator
 Catch PII leaks and harmful content on the way OUT
 
+## Cost Optimization Strategies
+
+### Model Routing
+Use cheap models for simple tasks
+
+### Caching
+Dont pay twice for the same query
+
+### Token Budgeting
+Set limits per request/user
+
+### Prompt Optimization 
+Shorter prompts = lower costs
+
 
